@@ -16,11 +16,10 @@ import LeaderBoard from "./LeaderBoard";
 
 class App extends React.Component {
   componentDidMount() {
-      this.props.dispatch(handleFetchData());
+    this.props.dispatch(handleFetchData());
   }
 
   render() {
-    // TODO: Check if logged in or not
     return (
       <div className="container">
         <BrowserRouter>
@@ -43,7 +42,6 @@ class App extends React.Component {
                   <QuestionPage />
                 </PrivateRoute>
               </Switch>
-               
             </div>
           </Fragment>
         </BrowserRouter>

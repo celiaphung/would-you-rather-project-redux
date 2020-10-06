@@ -161,7 +161,6 @@ class Question extends React.Component {
                   if (mode === "preview") {
                     history.push(`/question/${question.id}`);
                   } else if (mode === "display") {
-                    // Handle answer action
                     dispatch(
                       handleAddVote(authedUser, question.id, selectedOption)
                     );
