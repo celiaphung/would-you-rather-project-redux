@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -16,7 +16,7 @@ code {
   text-align: left;
   padding: 15px;
   font-weight: bold;
-  font-family: 'Helvetica'
+  font-family: "Helvetica";
 }
 
 .question {
@@ -33,28 +33,29 @@ code {
 .question-content {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .question-info {
   margin: 10px;
+  margin-right: 40px;
   display: flex;
+  width: 100%;
   flex-direction: column;
   font-size: 25px;
   font-weight: bold;
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
 }
 
 .question-title {
   padding: 10px;
+  margin: 10px;
 }
 
 .chart {
   width: 100%;
-  border: 1px solid #dad7d7;
-  padding: 10px;
-  display: flex;
   flex-direction: column;
-  margin: 10px ;
+  margin: 10px;
   border-radius: 3px;
 }
 
@@ -71,6 +72,7 @@ code {
   text-align: center;
   margin: 10px;
   border-radius: 3px;
+  vertical-align: middle;
 }
 
 .result-show {
@@ -82,21 +84,15 @@ code {
 .result-count {
   height: 100%;
   background-color: rgb(77, 138, 117);
-  width: 0;
+  width: 0%;
+  vertical-align: middle;
 }
 
 .vote {
   font-size: 15px;
   color: white;
   text-align: center;
-}
-
-#option-1 .result-count {
-  width: 20%;
-}
-
-#option-2 .result-count {
-  width: 80%;
+  vertical-align: middle;
 }
 
 .vote {
@@ -112,16 +108,55 @@ code {
 
 .btn {
   padding: 10px;
-  border: 0px solid rgba(0,0,0,.29);
+  margin-top: 25px;
+  border: 0px solid rgba(0, 0, 0, 0.29);
   border-radius: 4px;
   cursor: pointer;
   background: rgb(86, 155, 110);
   font-size: 16px;
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
   color: rgb(255, 255, 255);
   font-weight: bold;
   width: 250px;
   position: relative;
+}
+
+.question-filter {
+  display: flex;
+  width: 100%;
+  margin: 10px auto;
+  max-width: 590px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.question-filter div {
+  border-radius: 3px;
+  background-color: gray;
+  margin: 5px;
+  cursor: pointer;
+  padding: 10px;
+  flex: 1;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+.question-filter div.active {
+  background-color: lightblue;
+  color: gray;
+  border: 1px solid gray;
+}
+
+.leaderboard-text {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.leaderboard-text-first {
+  margin-top: 40px;
 }
 
 .center {
@@ -133,25 +168,26 @@ code {
   background-color: #f2f2f2;
 }
 
+.optionInput {
+  width: 100%;
+  padding: 10px;
+}
+
 .avatar {
   height: 150px;
   width: 150px;
   margin: 20px;
   float: left;
-  border-right: 1px solid #dad7d7;
 }
 
 .avatar-logo {
-  border: 1px solid #dad7d7;
   border-radius: 50%;
+  margin-top: -8px;
   height: 30px;
   width: 30px;
-  background-color: red;
 }
 
 .option {
-  display: flex;
-  padding-left: 30px;
   position: relative;
   margin-bottom: 15px;
   cursor: pointer;
@@ -160,14 +196,6 @@ code {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.option input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
 }
 
 .checkmark {
@@ -217,6 +245,15 @@ code {
   flex-direction: row;
 }
 
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
 ul {
   list-style-type: none;
   padding: 10px;
@@ -233,5 +270,4 @@ li {
   flex-direction: row;
   float: right;
   text-decoration: none;
-
 }

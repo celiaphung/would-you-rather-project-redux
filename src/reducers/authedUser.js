@@ -5,7 +5,7 @@ export default function authedUser(state = null, action) {
         case SET_AUTHED_USER:
             return {
                 ...state,
-                ...action.id
+                ...{ id: action.id }
             }
         default:
             return state
