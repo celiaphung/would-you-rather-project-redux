@@ -50,7 +50,6 @@ class App extends React.Component {
   }
 }
 
-//Dashboard component is only rendered once handleInitialData() is finished
 function mapStateToProps({ authedUser }) {
   return {
     loading: !authedUser,

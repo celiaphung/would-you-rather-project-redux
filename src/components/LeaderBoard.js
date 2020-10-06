@@ -4,17 +4,7 @@ import { withRouter } from "react-router-dom";
 
 class LeaderBoard extends React.Component {
   render() {
-    const { users } = this.props;
-
-    const scoredUsers = Object.keys(users)
-      .map((userId) => users[userId])
-      .map((user) => {
-        return {
-          ...user,
-          score: Object.keys(user.questions).length + Object.keys(user.answers).length,
-        };
-      })
-      .sort((a, b) => b.score - a.score);
+    const { scoredUsers } = this.props;
     return (
       <div>
         {scoredUsers.map((user, index) => (
@@ -28,11 +18,16 @@ class LeaderBoard extends React.Component {
               <div className="avatar">
                 <img alt="" src={user.avatarURL} width="100%" height="100%" />
               </div>
-
               <div>
-                        <p className="leaderboard-text leaderboard-text-first">Score: {user.score}</p>
-                        <p className="leaderboard-text">Questions asked: {Object.keys(user.questions).length}</p>
-                        <p className="leaderboard-text">Questions answered: {Object.keys(user.answers).length}</p>
+                <p className="leaderboard-text leaderboard-text-first">
+                  Score: {user.score}
+                </p>
+                <p className="leaderboard-text">
+                  Questions asked: {Object.keys(user.questions).length}
+                </p>
+                <p className="leaderboard-text">
+                  Questions answered: {Object.keys(user.answers).length}
+                </p>
               </div>
             </div>
           </div>
@@ -43,9 +38,19 @@ class LeaderBoard extends React.Component {
 }
 
 function mapStateToProps({ authedUser, users }) {
+  const scoredUsers = Object.keys(users)
+    .map((userId) => users[userId])
+    .map((user) => {
+      return {
+        ...user,
+        score:
+          Object.keys(user.questions).length + Object.keys(user.answers).length,
+      };
+    })
+    .sort((a, b) => b.score - a.score);
   return {
     authedUser: authedUser.id,
-    users,
+    scoredUsers,
   };
 }
 
